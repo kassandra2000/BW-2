@@ -1,0 +1,70 @@
+#search input {
+  width: 300px;
+  height: 50px;
+}
+#search:hover {
+  border: 2px solid #424242;
+  border-radius: var(--bs-border-radius-xxl);
+}
+
+#search input:active {
+  border: 0px;
+}
+
+i {
+  cursor: pointer;
+}
+#general-container {
+  background-color: #121212;
+}
+#card1 {
+  background-color: #dc148c;
+  max-width: 180px;
+  height: 180px;
+  position: relative;
+  overflow: hidden;
+}
+#card1 img {
+  width: 100px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transform: rotate(25deg) translate(18%, -2%);
+}
+
+footer h3 {
+  font-size: 16px;
+}
+footer i {
+  width: 50px;
+  height: 50px;
+}
+footer a {
+  display: block;
+  text-decoration: none;
+  margin-bottom: 8px;
+  color: #8f8f8d;
+  font-size: 16px;
+}
+footer a:hover {
+  color: white;
+  text-decoration: underline;
+}
+footer .btn {
+  cursor: pointer;
+  background-color: #292929;
+  width: 40px;
+  height: 40px;
+}
+footer .btn:hover {
+  background-color: #727272;
+}
+#last-footer a {
+  font-size: 14px;
+  margin-bottom: 0;
+}
+footer p {
+  font-size: 14px;
+  margin-bottom: 0;
+  color: #8f8f8d;
+}
