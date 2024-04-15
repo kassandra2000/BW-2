@@ -1,0 +1,156 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: content-box;
+}
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+ 
+button.dropdown-toggle{
+    margin: 0;
+    padding: 0;
+    color: white;
+    width: 80%;
+    font-size: 0.95vw;
+    justify-content: start;
+    display: flex;
+    align-items: center;
+}
+
+
+
+.svg {
+  display: inline-block;
+  width: 20px;
+  background-color: rgb(19, 19, 19);
+  border-radius: 50%;
+  color: rgb(207, 207, 207);
+  fill: currentcolor;
+  padding: 1px 6px 4px;
+}
+
+.col-7 {
+  background-color: rgb(32, 32, 32);
+}
+.col-7 .row {
+  justify-content: space-between;
+  align-items: center;
+}
+.account {
+  font-size: 0.7em;
+  background-color: rgb(43, 42, 42);
+  border-radius: 30px;
+  color: rgb(207, 207, 207);
+  height: 80%;
+  padding: 0;
+  margin: 0;
+  
+}
+.account img {
+  width: 20%;
+  border-radius: 50%;
+}
+
+.album {
+    margin: 0 3px;
+  background-color: rgb(29, 29, 29);
+  color: rgb(230, 230, 230);
+}
+.album div.col-4{
+    padding: 0;
+    padding:0  15px;
+    margin: 0;
+}
+.title-img {
+  width: 100%;
+}
+.album h6 {
+  font-size: 0.6em;
+}
+.album h1 {
+  font-size: 2em;
+}
+.album p {
+  font-size: 0.8em;
+}
+button {
+  color: rgb(207, 207, 207);
+  border: none;
+  border-radius: 30px;
+  font-size: 0.8em;
+  padding: 10px 20px;
+  margin: 10px;
+  cursor: pointer;
+  font-weight: 700;
+}
+.save {
+  background-color: transparent;
+  border: 1px solid rgb(207, 207, 207);
+}
+.play {
+  background-color: green;
+  color: rgb(41, 41, 41);
+}
+.point {
+  display: inline-block;
+  font-size: 2em;
+  color: rgba(190, 190, 190, 0.767);
+
+}
+.img-container{
+    margin: 10px;
+}
+.img-container div {
+  margin: 0;
+  padding: 0;
+}
+
+.img-container p {
+  font-size: 0.6em;
+  margin: 0;
+  padding: 0 0 0 5px;
+
+  color: rgb(207, 207, 207);
+  font-weight: 600;
+}
+.img-container img {
+  width: 80%;
+  border-radius: 3px;
+}
+
+.col-bg {
+  background-color: rgb(49, 49, 49);
+}
+h3,
+h4 {
+  color: rgb(207, 207, 207);
+}
+.list {
+  color: rgb(207, 207, 207);
+}
+
+.list col {
+    background-color: rgb(49, 49, 49);
+    
+}
+.list h6{
+    font-size: 0.7em;
+    font-weight: 900;
+}
+.list p{
+    font-size: 0.6em;
+    color: rgba(211, 210, 208, 0.863);
+}
+.list img {
+  width: 100%;
+  border-radius: 5px;
+  
+}
