@@ -1,0 +1,30 @@
+.custom-bg {
+  background: rgb(196, 168, 44);
+  background: linear-gradient(180deg, rgb(209, 181, 54) 26%, rgba(0, 0, 0, 1) 75%, rgba(69, 69, 69, 1) 100%);
+}
+
+.album-bg {
+  background: rgba(44, 44, 44, 0.322);
+}
+.button-bg {
+  background-color: rgba(12, 12, 12, 0.705);
+}
+i {
+  font-size: 25px;
+}
+.play-button {
+  width: 50px;
+  height: 50px;
+  margin-right: 15px;
+  background-color: #49d85a;
+}
+#clockicon {
+  font-size: 15px;
+}
+.graytext {
+  color: #8f8f8d;
+}
+.arrow-span {
+  width: 38px;
+  height: 38px;
+}
