@@ -154,3 +154,6 @@ h4 {
   border-radius: 5px;
   
 }
+.playlist-row p{
+    font-size: 0.8em;
+}
