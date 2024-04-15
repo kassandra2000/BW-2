@@ -1,0 +1,9 @@
+#hero {
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 460px;
+}
+
+#followBtn {
+  background-color: transparent;
+}
