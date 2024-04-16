@@ -30,7 +30,7 @@ window.addEventListener("DOMContentLoaded", () => {
       const div = document.createElement("div");
       div.classList.add("shadow-lg");
       div.innerHTML = `<img
-      src=${data.picture}
+      src=${data.picture_big}
       alt="album cover"
       width="200px"
     />`;
