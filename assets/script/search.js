@@ -56,6 +56,8 @@ const handleSubmit = (event) => {
     })
     .then((query) => {
       console.log(query);
+      const { title_short, id } = query.data[0];
+      const { name, picture } = query.data[0].artist;
     })
     .catch((err) => console.log(err));
 };

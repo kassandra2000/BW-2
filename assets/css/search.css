@@ -40,6 +40,19 @@ i {
 #relevant-image {
   max-width: 40px;
 }
+
+.artist h5 {
+  font-size: 16px;
+}
+
+.artist a {
+  font-size: 14px;
+  text-decoration: none;
+}
+.artist a:hover {
+  text-decoration: underline;
+}
+
 footer h3 {
   font-size: 16px;
 }
