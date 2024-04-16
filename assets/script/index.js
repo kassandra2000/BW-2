@@ -4,9 +4,40 @@ const playlistList = document.querySelector(".playlist-list");
 let playlistCounter = 0;
 const albumRow = document.querySelector(".album");
 let exist = 0;
-const arrId=["12","13","14","23","24","25","26","27","28","31","35","36","37","38"
-  ,"40","42","43","44","45","46","47","48","50","51","52","54","55"
-  ,"56","58","59","60","62"]
+const arrId = [
+  "12",
+  "13",
+  "14",
+  "23",
+  "24",
+  "25",
+  "28",
+  "31",
+  "36",
+  "37",
+
+  "40",
+  "45",
+  "47",
+  "50",
+  "52",
+  "54",
+  "58",
+  "59",
+  "60",
+];
+
+const random = (window.onload = () => {
+  return Math.floor(Math.random() * 20);
+});
+
+console.log(arrId.length);
+
+console.log(random());
+console.log(random());
+console.log(random());
+console.log(random());
+
 const locationId = (id) => {
   window.location.assign("../../album.html?id=" + id);
 };
@@ -26,9 +57,8 @@ const album = (url) => {
       }
     })
     .then((data) => {
-
       //   console.log(data);
-      const song = data.tracks.data[0];
+      const song = data.tracks.data[Math.floor(Math.random() * 7)];
       console.log(song);
       //aggiunge i titoli delle playlist nella colonna di sinistra
       const playlistTitle = document.createElement("a");
@@ -88,13 +118,13 @@ const album = (url) => {
 };
 
 window.onload = () => {
-  album("https://deezerdevs-deezer.p.rapidapi.com/playlist/12");
-  album("https://deezerdevs-deezer.p.rapidapi.com/playlist/14");
-  album("https://deezerdevs-deezer.p.rapidapi.com/playlist/67");
-  album("https://deezerdevs-deezer.p.rapidapi.com/playlist/1003");
-  album("https://deezerdevs-deezer.p.rapidapi.com/playlist/1004");
-  album("https://deezerdevs-deezer.p.rapidapi.com/playlist/119");
-  album("https://deezerdevs-deezer.p.rapidapi.com/playlist/120");
+  album("https://deezerdevs-deezer.p.rapidapi.com/playlist/" + arrId[random()]);
+  album("https://deezerdevs-deezer.p.rapidapi.com/playlist/" + arrId[random()]);
+  album("https://deezerdevs-deezer.p.rapidapi.com/playlist/" + arrId[random()]);
+  album("https://deezerdevs-deezer.p.rapidapi.com/playlist/" + arrId[random()]);
+  album("https://deezerdevs-deezer.p.rapidapi.com/playlist/" + arrId[random()]);
+  album("https://deezerdevs-deezer.p.rapidapi.com/playlist/" + arrId[random()]);
+  album("https://deezerdevs-deezer.p.rapidapi.com/playlist/" + arrId[random()]);
   album("https://deezerdevs-deezer.p.rapidapi.com/playlist/121");
   album("https://deezerdevs-deezer.p.rapidapi.com/playlist/122");
   album("https://deezerdevs-deezer.p.rapidapi.com/playlist/123");
@@ -104,8 +134,8 @@ window.onload = () => {
   album("https://deezerdevs-deezer.p.rapidapi.com/playlist/129");
   album("https://deezerdevs-deezer.p.rapidapi.com/playlist/130");
   album("https://deezerdevs-deezer.p.rapidapi.com/playlist/131");
-  album("https://deezerdevs-deezer.p.rapidapi.com/playlist/132");
-  album("https://deezerdevs-deezer.p.rapidapi.com/playlist/133");
-  album("https://deezerdevs-deezer.p.rapidapi.com/playlist/134");
-  album("https://deezerdevs-deezer.p.rapidapi.com/playlist/135");
+  album("https://deezerdevs-deezer.p.rapidapi.com/playlist/12");
+  album("https://deezerdevs-deezer.p.rapidapi.com/playlist/14");
+  album("https://deezerdevs-deezer.p.rapidapi.com/playlist/13");
+  album("https://deezerdevs-deezer.p.rapidapi.com/playlist/50");
 };
