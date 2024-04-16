@@ -56,7 +56,7 @@ const handleSubmit = (event) => {
     })
     .then((query) => {
       console.log(query);
-      const { id } = query.data[0].album;
+      const { id } = query.data[0].artist;
       const { name, picture } = query.data[0].artist;
       const search = document.querySelector(".search");
       search.innerHTML = ``;
