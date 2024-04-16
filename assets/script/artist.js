@@ -1,6 +1,12 @@
-const URL = "https://deezerdevs-deezer.p.rapidapi.com/artist/13";
+const params = new URLSearchParams(window.location.search);
+const id = params.get("id");
+console.log(id);
+const URL = "https://deezerdevs-deezer.p.rapidapi.com/artist/" + id;
+console.log(URL);
 const url2 =
-  " https://striveschool-api.herokuapp.com/api/deezer/artist/13/top?limit=5 ";
+  " https://striveschool-api.herokuapp.com/api/deezer/artist/" +
+  id +
+  "/top?limit=5 ";
 console.log(url2);
 const songs = document.getElementById("songs");
 const albums = document.getElementById("albums");
