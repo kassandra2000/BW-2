@@ -1,9 +1,59 @@
+p {
+  margin: 0;
+}
+.container-fluid {
+  background-color: rgb(32, 32, 32);
+  color: white;
+}
+
 #hero {
   background-repeat: no-repeat;
   background-size: cover;
   height: 460px;
 }
-
+.firstBtn {
+  background-color: #49d85a;
+}
 #followBtn {
   background-color: transparent;
+}
+.playBtn {
+  visibility: hidden;
+  color: white;
+}
+.songLine:hover {
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: rgba(70, 70, 70, 0.4);
+}
+
+.songLine:hover .playBtn {
+  visibility: visible;
+}
+
+#cover {
+  height: 50px;
+  width: 50px;
+}
+
+/* #albums .albumCards:last-of-type {
+  display: none;
+} */
+
+.albumCards:hover {
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: rgba(70, 70, 70, 0.4);
+}
+
+.alBtn {
+  display: none;
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  background-color: #49d85a;
+}
+
+.albumCards:hover .alBtn {
+  display: block;
 }
