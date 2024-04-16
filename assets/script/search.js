@@ -76,6 +76,9 @@ const handleSubmit = (event) => {
       `;
       col0.appendChild(divRelevant);
       search.appendChild(col0);
+      divRelevant.addEventListener("click", () => {
+        window.location.href = "./artist.html?id=" + id;
+      });
 
       const songs = document.createElement("div");
       songs.classList.add("col", "songs");
