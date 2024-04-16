@@ -37,7 +37,7 @@ const album = (url) => {
         albumCol4.classList.add("col-4");
         albumCol4.innerHTML = `<img
         class="title-img"
-        src= ${song.album.cover}
+        src= ${song.album.cover_big}
         alt="img"
       />`;
 
