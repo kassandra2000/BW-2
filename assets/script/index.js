@@ -61,7 +61,7 @@ const album = (url) => {
         div.classList.add("ps-1", "col-4");
 
         div.innerHTML = `
-        <div onclick="locationId(${data.id})" class="row flex col-bg g-1 img-container">
+        <div onclick="locationId(${data.id})" class="row flex col-bg g-1 img-container pointer">
           <div class="col-3">
             <img src=${data.picture} alt="" />
           </div>
