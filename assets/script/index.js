@@ -2,6 +2,10 @@
 const playlistRow = document.querySelector(".playlist-row");
 const albumRow = document.querySelector(".album");
 let exist = 0;
+const locationId= (id)=>{
+  window.location.assign("../../album.html?id="+id)
+}
+
 const album = (url) => {
   fetch(url, {
     method: "GET",
@@ -56,7 +60,7 @@ const album = (url) => {
       div.classList.add("ps-1", "col-4");
 
       div.innerHTML = `
-        <div class="row flex col-bg g-1 img-container">
+        <div onclick="locationId(${data.id})" class="row flex col-bg g-1 img-container">
           <div class="col-3">
             <img src=${data.picture} alt="" />
           </div>
