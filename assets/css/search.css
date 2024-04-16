@@ -63,7 +63,9 @@ i {
 .search a {
   font-size: 14px;
   text-decoration: none;
+  color: #424242;
 }
 .search a:hover {
   text-decoration: underline;
+  color: #424242;
 }

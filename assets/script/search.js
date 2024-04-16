@@ -56,7 +56,7 @@ const handleSubmit = (event) => {
     })
     .then((query) => {
       console.log(query);
-      const { title_short, id } = query.data[0];
+      const { id } = query.data[0].album;
       const { name, picture } = query.data[0].artist;
       const search = document.querySelector(".search");
       search.innerHTML = ``;
@@ -108,10 +108,10 @@ const handleSubmit = (event) => {
         <div class="row p-2">
         <div class="col-10">
         <h5 class="fw-semibold text-white mb-0 ms-2">${title_short}</h5>
-        <a href="#" class="text-white mb-0 ms-2">${name}</a>
+        <a href="#" class=" mb-0 ms-2">${name}</a>
         </div>
         <div class="col-2">
-        <p class="text-white mb-0 ms-2">${minute}:${seconds} </p>
+        <p class=" mb-0 ms-2">${minute}:${seconds} </p>
         </div>
         </div>
         `;
