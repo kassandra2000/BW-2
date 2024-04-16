@@ -52,6 +52,7 @@ window.addEventListener("DOMContentLoaded", () => {
       divArtist.appendChild(div);
       divArtist.appendChild(div1);
       for (let i = 0; i < data.tracks.data.length; i++) {
+        const artistID = data.tracks.data[i].artist.id;
         const trackMinute = data.tracks.data[i].duration / 60;
         let newTrackMinute = trackMinute.toString().split(".");
         let seconds = data.tracks.data[i].duration % 60;
@@ -75,7 +76,11 @@ window.addEventListener("DOMContentLoaded", () => {
     <div class="col col-4 align-content-center text-end">
       <span>${newTrackMinute[0]}:${seconds}</span>
     </div>`;
-
+        console.dir(divInternalTrack);
+        const artist = divInternalTrack.children[1].children[2];
+        artist.addEventListener("click", () => {
+          window.location.href = "./artist.html?id=" + artistID;
+        });
         divTrack.appendChild(divInternalTrack);
       }
     })
