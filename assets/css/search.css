@@ -35,21 +35,32 @@ i {
 
 #relevant-result {
   background-color: #181818;
+  cursor: pointer;
+}
+#relevant-result:hover {
+  background-color: #282828;
+  transition: all, 500ms;
+}
+
+.relevant-songs-row:hover {
+  background-color: #282828;
+  transition: all, 500ms;
 }
 
 #relevant-image {
   max-width: 40px;
+  cursor: pointer;
 }
 
-.artist h5 {
+.search h5 {
   font-size: 16px;
 }
 
-.artist a {
+.search a {
   font-size: 14px;
   text-decoration: none;
 }
-.artist a:hover {
+.search a:hover {
   text-decoration: underline;
 }
 
@@ -59,6 +70,9 @@ footer h3 {
 footer i {
   width: 50px;
   height: 50px;
+  position: absolute;
+  top: 0;
+  right: -7px;
 }
 footer a {
   display: block;

@@ -58,9 +58,69 @@ const handleSubmit = (event) => {
       console.log(query);
       const { title_short, id } = query.data[0];
       const { name, picture } = query.data[0].artist;
+      const search = document.querySelector(".search");
+      search.innerHTML = ``;
+      const col0 = document.createElement("div");
+      col0.classList.add("col");
+      col0.innerHTML = `
+      <h2 class="fw-bold text-white fs-4">Risultato più rilevante</h2>
+      `;
+      const divRelevant = document.createElement("div");
+      divRelevant.id = "relevant-result";
+      divRelevant.classList.add("p-3", "rounded-4", "mt-2");
+      divRelevant.innerHTML = ``;
+      divRelevant.innerHTML = `
+      <img src="${picture}" class="rounded-circle" />
+      <h3 class="fw-bold text-white fs-2">${name}</h3>
+      <p class="fs-5 text-white">Artista</p>
+      `;
+      col0.appendChild(divRelevant);
+      search.appendChild(col0);
+
+      const songs = document.createElement("div");
+      songs.classList.add("col", "songs");
+      songs.innerHTML = `
+      <h2 class="fw-bold text-white fs-4">Brani</h2>
+      `;
+      for (let i = 0; i < 5; i++) {
+        const row = document.createElement("div");
+        row.classList.add("row", "mt-2", "relevant-songs-row");
+        const col1 = document.createElement("div");
+        col1.classList.add("col-1", "p-2");
+        const col11 = document.createElement("div");
+        col11.classList.add("col-11");
+        const { cover_small } = query.data[i].album;
+        const { title_short, duration } = query.data[i];
+        const { name } = query.data[i].artist;
+        const minute = Math.floor(duration / 60);
+        let seconds = duration % 60;
+        if (seconds < 10) {
+          seconds = "0" + seconds;
+        }
+        console.log(cover_small);
+        col1.innerHTML = `
+        <img id="relevant-image" src="${cover_small}" />
+        `;
+        col11.innerHTML = `
+        <div class="row p-2">
+        <div class="col-10">
+        <h5 class="fw-semibold text-white mb-0 ms-2">${title_short}</h5>
+        <a href="#" class="text-white mb-0 ms-2">${name}</a>
+        </div>
+        <div class="col-2">
+        <p class="text-white mb-0 ms-2">${minute}:${seconds} </p>
+        </div>
+        </div>
+        `;
+        row.appendChild(col1);
+        row.appendChild(col11);
+        songs.appendChild(row);
+      }
+      search.appendChild(songs);
     })
     .catch((err) => console.log(err));
 };
+
 form.addEventListener("submit", handleSubmit);
 
 window.addEventListener("DOMContentLoaded", () => {
