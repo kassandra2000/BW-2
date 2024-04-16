@@ -24,8 +24,7 @@ window.addEventListener("DOMContentLoaded", () => {
     .then((data) => {
       const min = data.duration / 60;
       const minute = min.toString().split(".");
-
-      const parseMinute = minute[1].substring(0, 2);
+      const parseMinute = data.duration % 60;
 
       console.log(data);
       const div = document.createElement("div");
@@ -50,20 +49,17 @@ window.addEventListener("DOMContentLoaded", () => {
   ${data.creator.name} • 2017 • ${data.tracks.data.length} brani,
   <span class="graytext">${minute[0]} min ${parseMinute} sec.</span>
 </p>`;
-
+      divArtist.appendChild(div);
+      divArtist.appendChild(div1);
       for (let i = 0; i < data.tracks.data.length; i++) {
         const trackMinute = data.tracks.data[i].duration / 60;
         let newTrackMinute = trackMinute.toString().split(".");
-
-        if (trackMinute[1] == undefined) {
-        } else if (newTrackMinute[1].length > 2) {
-          newTrackMinute = newTrackMinute[1].substring(0, 2);
-          console.log("newTrackMinute");
-          
-        } else {
-          newTrackMinute = trackMinute.toString().split(".");
+        let seconds = data.tracks.data[i].duration % 60;
+        if (seconds.toString().length == 1) {
+          seconds = seconds + "0";
+        } else if (seconds.toString().length == 0) {
+          seconds = seconds + "00";
         }
-
         const divInternalTrack = document.createElement("div");
         divInternalTrack.classList.add("d-flex", "graytext", "pb-2");
         divInternalTrack.innerHTML = ` <div class="col col-1 align-content-center text-center">
@@ -77,7 +73,7 @@ window.addEventListener("DOMContentLoaded", () => {
       <span>694.000</span>
     </div>
     <div class="col col-4 align-content-center text-end">
-      <span>4:00</span>
+      <span>${newTrackMinute[0]}:${seconds}</span>
     </div>`;
 
         divTrack.appendChild(divInternalTrack);
