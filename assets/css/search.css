@@ -23,6 +23,7 @@ i {
   height: 180px;
   position: relative;
   overflow: hidden;
+  cursor: pointer;
 }
 #card1 img {
   width: 100px;
@@ -30,6 +31,26 @@ i {
   bottom: 0;
   right: 0;
   transform: rotate(25deg) translate(18%, -2%);
+}
+
+#relevant-result {
+  background-color: #181818;
+}
+
+#relevant-image {
+  max-width: 40px;
+}
+
+.artist h5 {
+  font-size: 16px;
+}
+
+.artist a {
+  font-size: 14px;
+  text-decoration: none;
+}
+.artist a:hover {
+  text-decoration: underline;
 }
 
 footer h3 {
