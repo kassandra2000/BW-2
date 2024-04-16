@@ -7,7 +7,6 @@ let exist = 0;
 const locationId = (id) => {
   window.location.assign("../../album.html?id=" + id);
 };
-
 const album = (url) => {
   fetch(url, {
     method: "GET",
@@ -28,8 +27,13 @@ const album = (url) => {
       const song = data.tracks.data[0];
       console.log(song);
       //aggiunge i titoli delle playlist nella colonna di sinistra
-      const playlistTitle = document.createElement("span");
+      const playlistTitle = document.createElement("a");
+      playlistTitle.setAttribute("href", "#");
       playlistTitle.textContent = data.title;
+      playlistTitle.addEventListener("click", () => {
+        locationId(data.id);
+      });
+
       playlistList.appendChild(playlistTitle);
 
       if (exist === 0) {
