@@ -157,3 +157,9 @@ h4 {
 .playlist-row p{
     font-size: 0.8em;
 }
+.pointer{
+  cursor: pointer;
+}
+.pointer:hover{
+  box-shadow: 1px 1px 4px rgb(68, 67, 67);
+}
