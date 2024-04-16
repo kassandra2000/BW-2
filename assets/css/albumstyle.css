@@ -33,6 +33,10 @@ i {
   height: 30px;
   fill: #8f8f8d;
 }
+#homebutton,
+#searchbutton {
+  fill: white;
+}
 .left-column {
   color: #8f8f8d;
   font-weight: 500;
