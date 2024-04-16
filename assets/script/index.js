@@ -4,6 +4,9 @@ const playlistList = document.querySelector(".playlist-list");
 let playlistCounter = 0;
 const albumRow = document.querySelector(".album");
 let exist = 0;
+const arrId=["12","13","14","23","24","25","26","27","28","31","35","36","37","38"
+  ,"40","42","43","44","45","46","47","48","50","51","52","54","55"
+  ,"56","58","59","60","62"]
 const locationId = (id) => {
   window.location.assign("../../album.html?id=" + id);
 };
@@ -23,6 +26,7 @@ const album = (url) => {
       }
     })
     .then((data) => {
+
       //   console.log(data);
       const song = data.tracks.data[0];
       console.log(song);
