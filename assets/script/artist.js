@@ -1,15 +1,27 @@
+const playlistArray = JSON.parse(sessionStorage.getItem("playlistArray"));
+const playlistList = document.querySelector(".playlist-list");
+
+if (playlistArray) {
+  playlistArray.forEach((playlist) => {
+    const playlistTitle = document.createElement("span");
+    playlistTitle.textContent = playlist.title;
+    playlistList.appendChild(playlistTitle);
+  });
+}
+
 const params = new URLSearchParams(window.location.search);
 const id = params.get("id");
 console.log(id);
 const URL = "https://deezerdevs-deezer.p.rapidapi.com/artist/" + id;
 console.log(URL);
-const url2 =
-  " https://striveschool-api.herokuapp.com/api/deezer/artist/" +
-  id +
-  "/top?limit=5 ";
+const url2 = " https://striveschool-api.herokuapp.com/api/deezer/artist/" + id + "/top?limit=5 ";
 console.log(url2);
 const songs = document.getElementById("songs");
 const albums = document.getElementById("albums");
+function getRandomNumber(min, max) {
+  const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+  return randomNumber.toLocaleString();
+}
 
 const artist = () => {
   fetch(URL, {
@@ -31,9 +43,7 @@ const artist = () => {
       console.log(generateArtist);
 
       document.getElementById("name").innerText = name;
-      document.getElementById(
-        "hero"
-      ).style.backgroundImage = `url(${picture_big})`;
+      document.getElementById("hero").style.backgroundImage = `url(${picture_big})`;
     })
     .catch((err) => console.log(err));
 };
@@ -62,6 +72,7 @@ const album = () => {
         const dur = (data[i].duration / 60).toFixed(2);
 
         const div = document.createElement("div");
+        const randomNumber = getRandomNumber(500000, 5000000);
         div.innerHTML = ` <div class="mt-2">
       
       <div class="songLine d-flex justify-content-between align-items-center">
@@ -90,7 +101,7 @@ viewBox="0 0 16 16"
         <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"/>
       </svg>
       </button>
-        <p>657.354</p>
+        <p>${randomNumber}</p>
         <p id="duration">${dur}</p>
         <button class="playBtn btn">
         <svg

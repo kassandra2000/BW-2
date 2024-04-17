@@ -1,13 +1,53 @@
 //costanti
+const playlistArray = [];
 const playlistRow = document.querySelector(".playlist-row");
 const playlistList = document.querySelector(".playlist-list");
 let playlistCounter = 0;
 const albumRow = document.querySelector(".album");
 let exist = 0;
+// const arrId = [
+//   "12",
+//   "13",
+//   "14",
+//   "23",
+//   "24",
+//   "25",
+//   "26",
+//   "27",
+//   "28",
+//   "31",
+//   "35",
+//   "36",
+//   "37",
+//   "38",
+//   "40",
+//   "42",
+//   "43",
+//   "44",
+//   "45",
+//   "46",
+//   "47",
+//   "48",
+//   "50",
+//   "51",
+//   "52",
+//   "54",
+//   "55",
+//   "56",
+//   "58",
+//   "59",
+//   "60",
+//   "62",
+// ];
 const locationId = (id) => {
   window.location.assign("../../album.html?id=" + id);
 };
-
+const PlaylistAllArrayPush = (data) => {
+  playlistArray.push({
+    id: data.id,
+    title: data.title,
+  });
+};
 const album = (url) => {
   fetch(url, {
     method: "GET",
@@ -28,8 +68,13 @@ const album = (url) => {
       const song = data.tracks.data[0];
       console.log(song);
       //aggiunge i titoli delle playlist nella colonna di sinistra
-      const playlistTitle = document.createElement("span");
+      const playlistTitle = document.createElement("a");
+      playlistTitle.setAttribute("href", "#");
       playlistTitle.textContent = data.title;
+      playlistTitle.addEventListener("click", () => {
+        locationId(data.id);
+      });
+
       playlistList.appendChild(playlistTitle);
 
       if (exist === 0) {
@@ -73,6 +118,10 @@ const album = (url) => {
         playlistRow.appendChild(div);
         playlistCounter++;
       }
+      PlaylistAllArrayPush(data);
+      if (playlistArray.length === 20) {
+        sessionStorage.setItem("playlistArray", JSON.stringify(playlistArray));
+      }
     })
     .catch((err) => {
       console.log(err);
@@ -80,24 +129,24 @@ const album = (url) => {
 };
 
 window.onload = () => {
-  album("https://deezerdevs-deezer.p.rapidapi.com/playlist/12");
-  album("https://deezerdevs-deezer.p.rapidapi.com/playlist/14");
-  album("https://deezerdevs-deezer.p.rapidapi.com/playlist/67");
-  album("https://deezerdevs-deezer.p.rapidapi.com/playlist/1003");
-  album("https://deezerdevs-deezer.p.rapidapi.com/playlist/1004");
-  album("https://deezerdevs-deezer.p.rapidapi.com/playlist/119");
-  album("https://deezerdevs-deezer.p.rapidapi.com/playlist/120");
-  album("https://deezerdevs-deezer.p.rapidapi.com/playlist/121");
-  album("https://deezerdevs-deezer.p.rapidapi.com/playlist/122");
-  album("https://deezerdevs-deezer.p.rapidapi.com/playlist/123");
-  album("https://deezerdevs-deezer.p.rapidapi.com/playlist/127");
-  album("https://deezerdevs-deezer.p.rapidapi.com/playlist/126");
-  album("https://deezerdevs-deezer.p.rapidapi.com/playlist/128");
-  album("https://deezerdevs-deezer.p.rapidapi.com/playlist/129");
-  album("https://deezerdevs-deezer.p.rapidapi.com/playlist/130");
-  album("https://deezerdevs-deezer.p.rapidapi.com/playlist/131");
-  album("https://deezerdevs-deezer.p.rapidapi.com/playlist/132");
-  album("https://deezerdevs-deezer.p.rapidapi.com/playlist/133");
-  album("https://deezerdevs-deezer.p.rapidapi.com/playlist/134");
-  album("https://deezerdevs-deezer.p.rapidapi.com/playlist/135");
+  album("https://deezerdevs-deezer.p.rapidapi.com/playlist/12"); //15 canzoni
+  album("https://deezerdevs-deezer.p.rapidapi.com/playlist/1083"); //35 canzoni
+  album("https://deezerdevs-deezer.p.rapidapi.com/playlist/1088"); //31 canzoni
+  album("https://deezerdevs-deezer.p.rapidapi.com/playlist/1094"); //17 canzoni
+  album("https://deezerdevs-deezer.p.rapidapi.com/playlist/1095"); //102 canzoni
+  album("https://deezerdevs-deezer.p.rapidapi.com/playlist/1097"); //21 canzoni
+  album("https://deezerdevs-deezer.p.rapidapi.com/playlist/1108"); //101 canzoni
+  album("https://deezerdevs-deezer.p.rapidapi.com/playlist/1120"); //25 canzoni
+  album("https://deezerdevs-deezer.p.rapidapi.com/playlist/1125"); //16 canzoni
+  album("https://deezerdevs-deezer.p.rapidapi.com/playlist/1130"); //21 canzoni
+  album("https://deezerdevs-deezer.p.rapidapi.com/playlist/1211"); //27 canzoni
+  album("https://deezerdevs-deezer.p.rapidapi.com/playlist/1230"); //30 canzoni
+  album("https://deezerdevs-deezer.p.rapidapi.com/playlist/1298"); //76 canzoni
+  album("https://deezerdevs-deezer.p.rapidapi.com/playlist/1310"); //17 canzoni
+  album("https://deezerdevs-deezer.p.rapidapi.com/playlist/1134"); //21 canzoni
+  album("https://deezerdevs-deezer.p.rapidapi.com/playlist/1138"); //14 canzoni
+  album("https://deezerdevs-deezer.p.rapidapi.com/playlist/1139"); //14 canzoni
+  album("https://deezerdevs-deezer.p.rapidapi.com/playlist/1202"); //15 canzoni
+  album("https://deezerdevs-deezer.p.rapidapi.com/playlist/1165"); //22 canzoni
+  album("https://deezerdevs-deezer.p.rapidapi.com/playlist/1177"); //17 canzoni
 };

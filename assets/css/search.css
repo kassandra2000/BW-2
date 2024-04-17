@@ -18,9 +18,6 @@ body {
 i {
   cursor: pointer;
 }
-#general-container {
-  background-color: #121212;
-}
 #card1 {
   background-color: #dc148c;
   max-width: 180px;
@@ -63,9 +60,16 @@ i {
 .search a {
   font-size: 14px;
   text-decoration: none;
-  color: #424242;
+  color: #949494;
 }
 .search a:hover {
   text-decoration: underline;
-  color: #424242;
+  color: #282828;
+}
+
+.search p {
+  color: #949494;
+}
+.col-7 {
+  background-color: #121212;
 }
