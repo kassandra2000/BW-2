@@ -56,7 +56,7 @@ const album = () => {
     .then((elem) => {
       console.log(elem);
       const data = elem.data;
-      for (let i = 0; i <= data.length; i++) {
+      for (let i = 0; i < data.length; i++) {
         const cover = data[i].album.cover;
         const title = data[i].title;
         const dur = (data[i].duration / 60).toFixed(2);
@@ -146,4 +146,5 @@ viewBox="0 0 16 16"
 window.onload = () => {
   artist();
   album();
+  mediaPlayer();
 };
