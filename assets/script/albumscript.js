@@ -147,3 +147,7 @@ window.addEventListener("DOMContentLoaded", () => {
     })
     .catch((err) => console.log(err));
 });
+
+window.onload = () => {
+  mediaPlayer();
+};

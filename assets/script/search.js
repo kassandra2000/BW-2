@@ -137,6 +137,7 @@ const handleSubmit = (event) => {
 form.addEventListener("submit", handleSubmit);
 
 window.addEventListener("DOMContentLoaded", () => {
+  mediaPlayer();
   fetchGenre(url + "132");
   fetchGenre(url + "116");
   fetchGenre(url + "122");
