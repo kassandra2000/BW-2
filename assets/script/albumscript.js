@@ -1,11 +1,27 @@
 //costanti
+const playlistArray = JSON.parse(sessionStorage.getItem("playlistArray"));
+const playlistList = document.querySelector(".playlist-list");
 const divArtist = document.querySelector(".artist");
 const divTrack = document.querySelector(".track");
-const centralCol = document.querySelector(".custom-bg");
+const centralCol = document.querySelector(".central-column");
+
+if (playlistArray) {
+  playlistArray.forEach((playlist) => {
+    const playlistTitle = document.createElement("span");
+    playlistTitle.textContent = playlist.title;
+    playlistList.appendChild(playlistTitle);
+  });
+}
 
 const params = new URLSearchParams(window.location.search);
 const id = params.get("id");
 const url = "https://deezerdevs-deezer.p.rapidapi.com/playlist/" + id;
+//numero random per le riproduzioni
+function getRandomNumber(min, max) {
+  const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+  return randomNumber.toLocaleString();
+}
+
 //avgcolor dell'immagine per lo sfondo della colonna centrale
 function getAverageColor(imageUrl) {
   return new Promise((resolve, reject) => {
@@ -82,7 +98,7 @@ window.addEventListener("DOMContentLoaded", () => {
     alt=""
   />
   ${data.creator.name} • 2017 • ${data.tracks.data.length} brani,
-  <span class="graytext">${minute[0]} min ${parseMinute} sec.</span>
+  <span class="durationtext">${minute[0]} min ${parseMinute} sec.</span>
 </p>`;
       divArtist.appendChild(div);
       divArtist.appendChild(div1);
@@ -96,6 +112,7 @@ window.addEventListener("DOMContentLoaded", () => {
         } else if (seconds.toString().length == 0) {
           seconds = seconds + "00";
         }
+        const randomNumber = getRandomNumber(100000, 1500000);
         const divInternalTrack = document.createElement("div");
         divInternalTrack.classList.add("d-flex", "graytext", "pb-2");
         divInternalTrack.innerHTML = ` <div class="col col-1 align-content-center text-center">
@@ -106,7 +123,7 @@ window.addEventListener("DOMContentLoaded", () => {
       <span>${data.tracks.data[i].artist.name}</span>
     </div>
     <div class="col col-4 align-content-center text-end">
-      <span>694.000</span>
+      <span>${randomNumber}</span>
     </div>
     <div class="col col-4 align-content-center text-end">
       <span>${newTrackMinute[0]}:${seconds}</span>

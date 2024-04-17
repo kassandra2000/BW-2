@@ -1,45 +1,52 @@
 //costanti
+const playlistArray = [];
 const playlistRow = document.querySelector(".playlist-row");
 const playlistList = document.querySelector(".playlist-list");
 let playlistCounter = 0;
 const albumRow = document.querySelector(".album");
 let exist = 0;
-const arrId = [
-  "12",
-  "13",
-  "14",
-  "23",
-  "24",
-  "25",
-  "26",
-  "27",
-  "28",
-  "31",
-  "35",
-  "36",
-  "37",
-  "38",
-  "40",
-  "42",
-  "43",
-  "44",
-  "45",
-  "46",
-  "47",
-  "48",
-  "50",
-  "51",
-  "52",
-  "54",
-  "55",
-  "56",
-  "58",
-  "59",
-  "60",
-  "62",
-];
+// const arrId = [
+//   "12",
+//   "13",
+//   "14",
+//   "23",
+//   "24",
+//   "25",
+//   "26",
+//   "27",
+//   "28",
+//   "31",
+//   "35",
+//   "36",
+//   "37",
+//   "38",
+//   "40",
+//   "42",
+//   "43",
+//   "44",
+//   "45",
+//   "46",
+//   "47",
+//   "48",
+//   "50",
+//   "51",
+//   "52",
+//   "54",
+//   "55",
+//   "56",
+//   "58",
+//   "59",
+//   "60",
+//   "62",
+// ];
 const locationId = (id) => {
   window.location.assign("../../album.html?id=" + id);
+};
+const PlaylistAllArrayPush = (data) => {
+  playlistArray.push({
+    id: data.id,
+    title: data.title,
+  });
 };
 const album = (url) => {
   fetch(url, {
@@ -110,6 +117,10 @@ const album = (url) => {
       </div>`;
         playlistRow.appendChild(div);
         playlistCounter++;
+      }
+      PlaylistAllArrayPush(data);
+      if (playlistArray.length === 20) {
+        sessionStorage.setItem("playlistArray", JSON.stringify(playlistArray));
       }
     })
     .catch((err) => {

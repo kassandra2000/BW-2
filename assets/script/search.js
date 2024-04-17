@@ -1,4 +1,14 @@
 const url = "https://deezerdevs-deezer.p.rapidapi.com/genre/";
+const playlistArray = JSON.parse(sessionStorage.getItem("playlistArray"));
+const playlistList = document.querySelector(".playlist-list");
+
+if (playlistArray) {
+  playlistArray.forEach((playlist) => {
+    const playlistTitle = document.createElement("span");
+    playlistTitle.textContent = playlist.title;
+    playlistList.appendChild(playlistTitle);
+  });
+}
 
 const fetchGenre = (URL) => {
   fetch(URL, {
