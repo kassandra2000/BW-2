@@ -72,7 +72,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
       const div1 = document.createElement("div");
       div1.classList.add("ps-3");
-      div1.innerHTML = `<span class="fw-bold">ALBUM</span>
+      div1.innerHTML = `<span class="fw-bold">PLAYLIST</span>
 <h1 class="display-2 fw-bold">${data.title}</h1>
 <p class="m-0">
   <img
