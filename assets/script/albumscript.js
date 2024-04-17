@@ -7,7 +7,8 @@ const centralCol = document.querySelector(".central-column");
 
 if (playlistArray) {
   playlistArray.forEach((playlist) => {
-    const playlistTitle = document.createElement("span");
+    const playlistTitle = document.createElement("a");
+    playlistTitle.setAttribute("href", "./album.html?id=" + playlist.id);
     playlistTitle.textContent = playlist.title;
     playlistList.appendChild(playlistTitle);
   });
