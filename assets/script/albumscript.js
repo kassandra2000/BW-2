@@ -1,10 +1,44 @@
 //costanti
 const divArtist = document.querySelector(".artist");
 const divTrack = document.querySelector(".track");
+const centralCol = document.querySelector(".custom-bg");
 
 const params = new URLSearchParams(window.location.search);
 const id = params.get("id");
 const url = "https://deezerdevs-deezer.p.rapidapi.com/playlist/" + id;
+//avgcolor dell'immagine per lo sfondo della colonna centrale
+function getAverageColor(imageUrl) {
+  return new Promise((resolve, reject) => {
+    const img = new Image();
+    img.crossOrigin = "Anonymous";
+    img.onload = () => {
+      const canvas = document.createElement("canvas");
+      const ctx = canvas.getContext("2d");
+      canvas.width = img.width;
+      canvas.height = img.height;
+      ctx.drawImage(img, 0, 0);
+      const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+      let r = 0,
+        g = 0,
+        b = 0;
+
+      for (let i = 0; i < imageData.data.length; i += 4) {
+        r += imageData.data[i];
+        g += imageData.data[i + 1];
+        b += imageData.data[i + 2];
+      }
+
+      const pixelCount = imageData.data.length / 4;
+      const avgR = Math.round(r / pixelCount);
+      const avgG = Math.round(g / pixelCount);
+      const avgB = Math.round(b / pixelCount);
+      const avgColor = `rgb(${avgR}, ${avgG}, ${avgB})`;
+      resolve(avgColor);
+    };
+    img.onerror = reject;
+    img.src = imageUrl;
+  });
+}
 
 window.addEventListener("DOMContentLoaded", () => {
   fetch(url, {
@@ -30,6 +64,7 @@ window.addEventListener("DOMContentLoaded", () => {
       const div = document.createElement("div");
       div.classList.add("shadow-lg");
       div.innerHTML = `<img
+      id="myImg"
       src=${data.picture_big}
       alt="album cover"
       width="200px"
@@ -83,6 +118,15 @@ window.addEventListener("DOMContentLoaded", () => {
         });
         divTrack.appendChild(divInternalTrack);
       }
+      const imageUrl = data.picture_big;
+      getAverageColor(imageUrl)
+        .then((avgColor) => {
+          const gradient = `linear-gradient(180deg, ${avgColor} 30%, rgba(10, 10, 10, 1) 40%`;
+          centralCol.style.background = gradient;
+        })
+        .catch((error) => {
+          console.error("Errore nel calcolo del colore medio:", error);
+        });
     })
     .catch((err) => console.log(err));
 });
