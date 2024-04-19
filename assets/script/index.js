@@ -1,4 +1,5 @@
 //costanti
+const playlistArray = [];
 const playlistRow = document.querySelector(".playlist-row");
 const playlistList = document.querySelector(".playlist-list");
 let playlistCounter = 0;
@@ -40,6 +41,12 @@ console.log(random());
 
 const locationId = (id) => {
   window.location.assign("../../album.html?id=" + id);
+};
+const PlaylistAllArrayPush = (data) => {
+  playlistArray.push({
+    id: data.id,
+    title: data.title,
+  });
 };
 const album = (url) => {
   fetch(url, {
@@ -111,6 +118,10 @@ const album = (url) => {
         playlistRow.appendChild(div);
         playlistCounter++;
       }
+      PlaylistAllArrayPush(data);
+      if (playlistArray.length === 20) {
+        sessionStorage.setItem("playlistArray", JSON.stringify(playlistArray));
+      }
     })
     .catch((err) => {
       console.log(err);
@@ -138,4 +149,25 @@ window.onload = () => {
   album("https://deezerdevs-deezer.p.rapidapi.com/playlist/14");
   album("https://deezerdevs-deezer.p.rapidapi.com/playlist/13");
   album("https://deezerdevs-deezer.p.rapidapi.com/playlist/50");
+  mediaPlayer();
+  album("https://deezerdevs-deezer.p.rapidapi.com/playlist/12"); //15 canzoni
+  album("https://deezerdevs-deezer.p.rapidapi.com/playlist/1083"); //35 canzoni
+  album("https://deezerdevs-deezer.p.rapidapi.com/playlist/1088"); //31 canzoni
+  album("https://deezerdevs-deezer.p.rapidapi.com/playlist/1094"); //17 canzoni
+  album("https://deezerdevs-deezer.p.rapidapi.com/playlist/1095"); //102 canzoni
+  album("https://deezerdevs-deezer.p.rapidapi.com/playlist/1097"); //21 canzoni
+  album("https://deezerdevs-deezer.p.rapidapi.com/playlist/1108"); //101 canzoni
+  album("https://deezerdevs-deezer.p.rapidapi.com/playlist/1120"); //25 canzoni
+  album("https://deezerdevs-deezer.p.rapidapi.com/playlist/1125"); //16 canzoni
+  album("https://deezerdevs-deezer.p.rapidapi.com/playlist/1130"); //21 canzoni
+  album("https://deezerdevs-deezer.p.rapidapi.com/playlist/1211"); //27 canzoni
+  album("https://deezerdevs-deezer.p.rapidapi.com/playlist/1230"); //30 canzoni
+  album("https://deezerdevs-deezer.p.rapidapi.com/playlist/1298"); //76 canzoni
+  album("https://deezerdevs-deezer.p.rapidapi.com/playlist/1310"); //17 canzoni
+  album("https://deezerdevs-deezer.p.rapidapi.com/playlist/1134"); //21 canzoni
+  album("https://deezerdevs-deezer.p.rapidapi.com/playlist/1138"); //14 canzoni
+  album("https://deezerdevs-deezer.p.rapidapi.com/playlist/1139"); //14 canzoni
+  album("https://deezerdevs-deezer.p.rapidapi.com/playlist/1202"); //15 canzoni
+  album("https://deezerdevs-deezer.p.rapidapi.com/playlist/1165"); //22 canzoni
+  album("https://deezerdevs-deezer.p.rapidapi.com/playlist/1177"); //17 canzoni
 };
