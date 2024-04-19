@@ -52,7 +52,7 @@ const album = (url) => {
   fetch(url, {
     method: "GET",
     headers: {
-      "X-RapidAPI-Key": "986451c613msh2cd80f663430ebbp123103jsnaf6225d65948",
+      "X-RapidAPI-Key": "ee479080e1msh75d5fd4295dec8ap18b484jsnc600f214b6d8",
       "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com",
     },
   })

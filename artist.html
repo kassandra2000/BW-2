@@ -16,7 +16,7 @@
   <body>
     <div class="container-fluid">
       <div class="row row-cols-3">
-        <div class="col col-3 left-column p-3">
+        <div class="col col-3 left-column p-3 d-none d-md-block">
           <div class="col col-12 pb-3">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -130,7 +130,7 @@
           </div>
           <div class="col col-12 playlist-list d-flex flex-column"></div>
         </div>
-        <div class="col col-7 p-0 central-column">
+        <div class="col col-12 col-md-7 p-0 central-column">
           <div id="hero" class="d-flex align-items-end p-3">
             <div>
               <h1 id="name"></h1>
@@ -139,9 +139,9 @@
           </div>
 
           <div class="p-3">
-            <div class="d-flex gap-3 mt-3">
+            <div class="d-flex gap-3 mt-1 align-items-center">
               <button class="firstBtn btn rounded-circle">
-                <i class="bi bi-play-circle-fill"></i>
+                <i class="mainBtn bi bi-play-circle-fill"></i>
               </button>
               <button id="followBtn" class="btn btn-secondary rounded-pill">
                 Segui
@@ -167,10 +167,17 @@
                   </svg>
                 </button>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><a class="dropdown-item" href="#">Segui</a></li>
                   <li>
-                    <a class="dropdown-item" href="#">Something else here</a>
+                    <a class="dropdown-item" href="#"
+                      >Vai a Radio dell'artista</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">Segnala</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">Condividi</a>
                   </li>
                 </ul>
               </div>
@@ -192,11 +199,14 @@
           </div>
           <div class="mt-3 p-3">
             <h4>Album Suggeriti</h4>
-            <div id="albums" class="d-flex mt-2"></div>
+            <div
+              id="albums"
+              class="row row-cols-lg-4 row-cols-md-3 row-cols-sm-2"
+            ></div>
           </div>
 
           <footer>
-            <div class="container ms-2 p-3 mt-5">
+            <div class="container ms-2 p-3 mt-5 d-none d-md-block">
               <div class="row row-cols-5">
                 <div class="col">
                   <h3 class="text-white fw-bold">Azienda</h3>
@@ -284,7 +294,7 @@
           </footer>
         </div>
 
-        <div class="col col-2 right-column p-3">
+        <div class="col col-2 right-column p-3 d-none d-md-block">
           <div
             class="col col-12 d-flex align-items-center justify-content-between mb-3"
           >

@@ -88,22 +88,22 @@ const album = () => {
       
       <div class="songLine d-flex justify-content-between align-items-center">
       <div class="d-flex align-items-center py-2 gap-2">
-      <button onclick="mediaPlayer(${songId})" class="playBtn btn text-white"><i class="bi bi-play-circle-fill"></i>
+      <button onclick="mediaPlayer(${songId})" class="playBtn  btn text-white"><i class="bi bi-play-circle-fill"></i>
 </button>
         <img id="cover" src=${cover} alt="" />
         <h6 id="title">${title}</h6>
         </div>
         <div class="d-flex align-items-center gap-4">
-        <button class=" playBtn btn text-white"><svg xmlns="http://www.w3.org/2000/svg" 
+        <button class=" elemBtn btn text-white"><svg xmlns="http://www.w3.org/2000/svg" 
         width="16" 
         height="16" 
         fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
         <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"/>
       </svg>
       </button>
-        <p>${randomNumber}</p>
+        <p class="visual">${randomNumber}</p>
         <p id="duration">${minute[0]}:${parseMinute}</p>
-        <button class="playBtn btn">
+        <button class="elemBtn btn">
         <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
@@ -124,19 +124,17 @@ const album = () => {
 </div> `;
         songs.appendChild(div);
 
-        const albumId = data[i].album.id;
-        console.log(albumId);
         const albumTitle = data[i].album.title;
         const divAblum = document.createElement("div");
-
+        divAblum.classList.add("generalAlbum", "col");
         divAblum.innerHTML = `<div class="albumCards ">
         <div class="selAlbum position-relative p-1 gap-1">
 <img src=${cover} class="albumImg" alt="...">
-<a href="/album.html?" class="alBtn btn rounded-circle "><i class="bi bi-play-circle-fill"></i>
-</a >
+<button class="alBtn btn rounded-circle "><i class="albumBtn bi bi-play-circle-fill"></i>
+</button>
 </div>
 <div class= "albumTitle">
-  <p class="pt-2">${albumTitle}</p>
+  <p class="pt-2 px-1">${albumTitle}</p>
   </div>
 </div> `;
         albums.appendChild(divAblum);
