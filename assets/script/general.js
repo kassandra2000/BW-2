@@ -4,13 +4,14 @@ const titleAdd = document.getElementById("title");
 const artistAdd = document.querySelector(".artist");
 const previewAdd = document.getElementById("preview");
 const playBtn = document.getElementById("play");
+const playBtnMobile = document.querySelector("#player");
 const img = document.getElementById("img");
 let audio1 = undefined;
 let i = 3.33;
 let time = 0;
 let interval = 0;
 const bar = document.querySelector(".progress");
-console.log("");
+console.log(playBtnMobile);
 
 const mediaPlayer = (id) => {
   const URLid = URL3 + id;
@@ -21,7 +22,7 @@ const mediaPlayer = (id) => {
     },
   })
     .then((resp) => {
-      console.log(resp);
+      // console.log(resp);
       if (resp.ok) {
         return resp.json();
       } else {
@@ -46,14 +47,14 @@ const mediaPlayer = (id) => {
       artistAdd.innerHTML = `${artist}`;
       img.src = `${cover}`;
       audio1 = new Audio(preview);
-
+      console.log(preview);
       playBtn.addEventListener("click", () => {
         if (interval === 0 || audio1.paused) {
           interval = setInterval(() => {
             if (time < 99) {
               time += i;
               bar.style = `width:${time}%`;
-              console.log(time);
+              // console.log(time);
             } else {
               clearInterval();
             }
@@ -65,7 +66,7 @@ const mediaPlayer = (id) => {
         } else {
           audio1.pause();
           clearInterval(interval);
-          console.log(interval);
+          // console.log(interval);
           time += 3.33;
         }
 
@@ -74,9 +75,25 @@ const mediaPlayer = (id) => {
           console.log(audio1.volume);
           audio1.volume = volumeSlider.value;
 
-          console.log(audio1.volume);
-          console.dir(audio1);
+          // console.log(audio1.volume);
+          // console.dir(audio1);
         });
+      });
+
+      playBtnMobile.addEventListener("click", (event) => {
+        event.preventDefault()
+        console.log(e)
+        console.log("ciao");
+        // const artistName = querySelector(".artist-name");
+        // artistName.innerHTML = `${titleAdd} - ${elem.artist.name}`;
+        // console.log("ciao");
+        // if (audio1.paused) {
+        //   audio1.play();
+        //   console.log("ciao");
+        // } else {
+        //   audio1.pause();
+        //   console.log("ciao");
+        // }
       });
 
       console.log(titleAdd);

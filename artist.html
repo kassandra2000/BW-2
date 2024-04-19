@@ -132,9 +132,40 @@
         </div>
         <div class="col col-12 col-md-7 p-0 central-column">
           <div id="hero" class="d-flex align-items-end p-3">
-            <div>
-              <h1 id="name"></h1>
-              <p>1.000.000 ascoltatori mensili</p>
+            <div class="hero d-flex flex-column justify-content-between">
+              <div class="upperIcons d-flex align-items-center">
+                <div class="svg mt-3 mb-auto">
+                  <svg
+                    data-encore-id="icon"
+                    role="img"
+                    aria-hidden="true"
+                    class="Svg-sc-ytk21e-0 cAMMLk IYDlXmBmmUKHveMzIPCF"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M11.03.47a.75.75 0 0 1 0 1.06L4.56 8l6.47 6.47a.75.75 0 1 1-1.06 1.06L2.44 8 9.97.47a.75.75 0 0 1 1.06 0z"
+                    ></path>
+                  </svg>
+                </div>
+                <div class="svg mt-3 mb-3">
+                  <svg
+                    data-encore-id="icon"
+                    role="img"
+                    aria-hidden="true"
+                    class="Svg-sc-ytk21e-0 cAMMLk IYDlXmBmmUKHveMzIPCF"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M4.97.47a.75.75 0 0 0 0 1.06L11.44 8l-6.47 6.47a.75.75 0 1 0 1.06 1.06L13.56 8 6.03.47a.75.75 0 0 0-1.06 0z"
+                    ></path>
+                  </svg>
+                </div>
+                <i class="bi bi-person-circle text-white fs-5 ms-3 me-3"></i>
+              </div>
+              <div>
+                <h1 id="name"></h1>
+                <p>1.000.000 ascoltatori mensili</p>
+              </div>
             </div>
           </div>
 
@@ -379,7 +410,7 @@
             <div class="control-buttons">
               <i class="bi bi-shuffle"></i>
               <i class="bi bi-skip-backward-fill"></i>
-              <i class="bi bi-play-circle-fill fs-1"></i>
+              <i id="play" class="bi bi-play-circle-fill fs-1"></i>
               <i class="bi bi-skip-forward-fill"></i>
               <i class="bi bi-repeat"></i>
             </div>
@@ -419,7 +450,7 @@
 
       <!-- mobile player -->
       <div
-        class="player container-fluid d-md-none rounded d-flex align-items-center"
+        class="player  container-fluid d-md-none rounded d-flex align-items-center"
         style="
           height: 10vw;
           color: rgba(226, 225, 225, 0.932);
@@ -429,14 +460,16 @@
       >
         <div class="row flex-grow-1 d-flex justify-content-between">
           <div class="col-8 d-flex align-items-center">
-            <p class="text-truncate m-0">Micheal Jackson - Billie Jackson</p>
+            <p class=" artist-name text-truncate m-0">Micheal Jackson - Billie Jackson</p>
           </div>
-
+          <audio id="audio">
+            <source id="preview" src"" type="audio/mpeg">
+          </audio>
           <div class="col-3 d-flex align-items-center me-0 me-md-4">
             <a href=""><i class="bi bi-cast fs-2"></i></a>
             <a href=""><i class="bi bi-suit-heart fs-2 mx-2"></i></a>
             <a href=""
-              ><i class="bi bi-play-circle-fill playlist-btn fs-1 fs-1 ms-1"></i
+              ><i id="player" class="bi bi-play-circle-fill playlist-btn fs-1 fs-1 ms-1"></i
             ></a>
           </div>
         </div>
