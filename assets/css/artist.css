@@ -9,18 +9,36 @@ p {
 #hero {
   background-repeat: no-repeat;
   background-size: cover;
-  height: 460px;
+  background-position: center;
+  height: 560px;
+}
+@media screen and (min-width: 1400px) {
+  #hero {
+    background-position-y: -200px;
+  }
 }
 .firstBtn {
+  border: none;
+  height: 70px;
+  padding: 0;
+}
+.mainBtn {
   color: #49d85a;
+  font-size: 3.5rem;
 }
 #followBtn {
   background-color: transparent;
+  height: 40px;
 }
 .playBtn {
   visibility: hidden;
   color: white;
 }
+.elemBtn {
+  visibility: hidden;
+  color: white;
+}
+
 .songLine:hover {
   border-radius: 8px;
   cursor: pointer;
@@ -30,13 +48,16 @@ p {
 .songLine:hover .playBtn {
   visibility: visible;
 }
+.songLine:hover .elemBtn {
+  visibility: visible;
+}
 
 #cover {
   height: 50px;
   width: 50px;
 }
 
-/* #albums .albumCards:last-of-type {
+/* .generalAlbum .albumCards:last-of-type {
   display: none;
 } */
 
@@ -45,15 +66,47 @@ p {
   cursor: pointer;
   background-color: rgba(70, 70, 70, 0.4);
 }
-
+.albumCards {
+  width: 130px;
+}
 .alBtn {
   display: none;
   position: absolute;
   bottom: 5px;
   right: 5px;
-  background-color: #49d85a;
+  fill: #49d85a;
+  border: none;
+}
+.albumBtn {
+  color: #49d85a;
+  display: block;
+  font-size: 2rem;
 }
 
 .albumCards:hover .alBtn {
   display: block;
+}
+
+@media screen and (max-width: 768px) {
+  .playBtn {
+    visibility: visible;
+  }
+  .elemBtn {
+    display: none;
+  }
+  .elemBtn:hover {
+    display: none;
+  }
+  .visual {
+    display: none;
+  }
+  h6 {
+    font-size: 0.8rem;
+  }
+  p {
+    font-size: 0.8rem;
+  }
+}
+.dropdown-menu {
+  background-color: rgba(70, 70, 70, 1);
 }
