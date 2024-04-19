@@ -121,7 +121,9 @@ window.addEventListener("DOMContentLoaded", () => {
       <span>${i + 1}</span>
     </div>
     <div class="col col-4 col-md-3">
-      <span class="text-white" data-track-id="${data.tracks.data[i].id}">${data.tracks.data[i].title_short}</span><br />
+      <span class="text-white track-title" data-track-id="${data.tracks.data[i].id}">${
+          data.tracks.data[i].title_short
+        }</span><br />
       <span class="cursor-pointer">${data.tracks.data[i].artist.name}</span>
     </div>
     <div class="col d-none d-md-block col-4 align-content-center text-end">
@@ -147,6 +149,13 @@ window.addEventListener("DOMContentLoaded", () => {
         .catch((error) => {
           console.error("Errore nel calcolo del colore medio:", error);
         });
+      const trackTitleElements = document.querySelectorAll(".track-title");
+      trackTitleElements.forEach((titleElement) => {
+        titleElement.addEventListener("click", () => {
+          const trackId = titleElement.getAttribute("data-track-id");
+          mediaPlayer(trackId);
+        });
+      });
     })
     .catch((err) => console.log(err));
 });
