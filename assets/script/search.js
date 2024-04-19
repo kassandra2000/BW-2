@@ -32,7 +32,8 @@ const fetchGenre = (URL) => {
       col.classList.add("col");
       const card = document.createElement("div");
       card.id = "card1";
-      card.style.backgroundColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
+      card.style.backgroundColor =
+        "#" + Math.floor(Math.random() * 16777215).toString(16);
       card.classList.add("rounded-4", "p-3", "mt-4");
       card.innerHTML = `
         
