@@ -13,28 +13,26 @@ body {
   justify-content: center;
   align-items: center;
 }
- 
-button.dropdown-toggle{
-    margin: 0;
-    padding: 0;
-    color: white;
-    width: 80%;
-    font-size: 0.95vw;
-    justify-content: start;
-    display: flex;
-    align-items: center;
+
+button.dropdown-toggle {
+  margin: 0;
+  padding: 0;
+  color: white;
+  width: 80%;
+  font-size: 0.95vw;
+  justify-content: start;
+  display: flex;
+  align-items: center;
 }
-
-
 
 .svg {
   display: inline-block;
-  width: 20px;
+  width: 27px;
   background-color: rgb(19, 19, 19);
   border-radius: 50%;
   color: rgb(207, 207, 207);
   fill: currentcolor;
-  padding: 1px 6px 4px;
+  padding: 3px 6px 4px;
 }
 
 .col-7 {
@@ -52,7 +50,6 @@ button.dropdown-toggle{
   height: 80%;
   padding: 0;
   margin: 0;
-  
 }
 .account img {
   width: 20%;
@@ -60,32 +57,32 @@ button.dropdown-toggle{
 }
 
 .album {
-    margin: 0 3px;
+  margin: 0 3px;
   background-color: rgb(29, 29, 29);
   color: rgb(230, 230, 230);
 }
-.album div.col-4{
-    padding: 0;
-    padding:0  15px;
-    margin: 0;
+.album div.col-4 {
+  padding: 0;
+  padding: 0 15px;
+  margin: 0;
 }
 .title-img {
   width: 100%;
 }
 .album h6 {
-  font-size: 0.6em;
+  font-size: 1.1em;
 }
 .album h1 {
-  font-size: 2em;
+  font-size: 3em;
 }
 .album p {
-  font-size: 0.8em;
+  font-size: 1.4em;
 }
 button {
   color: rgb(207, 207, 207);
   border: none;
   border-radius: 30px;
-  font-size: 0.8em;
+  font-size: 1.4em;
   padding: 10px 20px;
   margin: 10px;
   cursor: pointer;
@@ -103,10 +100,9 @@ button {
   display: inline-block;
   font-size: 2em;
   color: rgba(190, 190, 190, 0.767);
-
 }
-.img-container{
-    margin: 10px;
+.img-container {
+  margin: 10px;
 }
 .img-container div {
   margin: 0;
@@ -114,7 +110,6 @@ button {
 }
 
 .img-container p {
-  font-size: 0.6em;
   margin: 0;
   padding: 0 0 0 5px;
 
@@ -132,34 +127,36 @@ button {
 h3,
 h4 {
   color: rgb(207, 207, 207);
+  font-size: 3em;
 }
 .list {
   color: rgb(207, 207, 207);
 }
 
 .list col {
-    background-color: rgb(49, 49, 49);
-    
+  background-color: rgb(49, 49, 49);
 }
-.list h6{
-    font-size: 0.7em;
-    font-weight: 900;
+.list h6 {
+  font-size: 1.3em;
+  font-weight: 900;
 }
-.list p{
-    font-size: 0.6em;
-    color: rgba(211, 210, 208, 0.863);
+.list p {
+  font-size: 1.2em;
+  color: rgba(211, 210, 208, 0.863);
 }
 .list img {
   width: 100%;
   border-radius: 5px;
-  
 }
-.playlist-row p{
-    font-size: 0.8em;
+.playlist-row p {
+  font-size: 0.8em;
 }
-.pointer{
+.pointer {
   cursor: pointer;
 }
-.pointer:hover{
+.pointer:hover {
   box-shadow: 1px 1px 4px rgb(68, 67, 67);
+}
+.playlist-row p {
+  font-size: 1.2em;
 }
