@@ -103,7 +103,7 @@ const album = (url) => {
       }
       if (playlistCounter < 6) {
         const div = document.createElement("div");
-        div.classList.add("ps-1", "col-4");
+        div.classList.add("ps-1","col-12", "col-sm-6","col-md-4");
 
         div.innerHTML = `
         <div onclick="locationId(${data.id})" class="row flex col-bg g-1 img-container pointer">

@@ -90,6 +90,18 @@ footer p {
   font-size: 0.7rem;
   font-weight: 500;
 }
+
+@media only screen and (max-width: 1108px) {
+  .right-column p {
+    font-size: 1.4vw;
+    margin: 0;
+    font-weight: bold;
+  }
+  .right-column span {
+    font-size: 1.2vw;
+    font-weight: 500;
+  }
+}
 span i {
   font-size: 12px;
 }
@@ -310,4 +322,42 @@ i:hover {
   background: #d3d3d3;
   border-radius: 50%;
   cursor: pointer;
+}
+
+#volume-control {
+  appearance: none;
+  width: 100%;
+  height: 5px;
+  border-radius: 10px;
+  background-color: grey;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+#volume-control::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 1px;
+  height: 20px;
+  box-shadow: -400px 0 0 400px white;
+}
+
+#volume-control::-webkit-slider-thumb:hover {
+  box-shadow: -400px 0 0 400px #1db954;
+} /*# sourceMappingURL=main.css.map */
+
+a {
+  text-decoration: none;
+  color: white;
+  margin-bottom: 2px;
+  width: 100%;
+  margin: 0;
+}
+
+.player {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+ 
+ 
 }
