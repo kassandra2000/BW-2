@@ -19,7 +19,7 @@
     <div class="container-fluid">
       <div class="row">
         <!-- COLONNA DI SINISTRA -->
-        <div class="col col-3 left-column p-3">
+        <div class="col col-2 left-column p-3 d-none d-md-block">
           <div class="col col-12 pb-3">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -121,7 +121,7 @@
           </div>
           <div class="col col-12 playlist-list d-flex flex-column"></div>
         </div>
-        <div class="col col-7 custom-bg central-column">
+        <div class="col col-12 col-md-7 custom-bg central-column">
           <div class="col col-12 bg-transparent">
             <div class="d-flex justify-content-between my-2 text-white">
               <div class="d-flex">
@@ -132,7 +132,7 @@
                   ><i class="bi bi-chevron-right text-white"></i
                 ></span>
               </div>
-              <div class="dropdown">
+              <div class="dropdown d-none d-md-block">
                 <button
                   class="btn btn-dark dropdown-toggle p-1 rounded-pill button-bg"
                   type="button"
@@ -155,18 +155,16 @@
           <div class="artist col col-12 bg-transparent d-flex text-white align-items-end pb-3"></div>
           <div class="track row album-bg text-white p-4">
             <div class="d-flex pb-3 align-items-center">
-              <div class="play-button rounded-circle d-flex justify-content-center align-items-center">
-                <i class="bi bi-play-fill text-dark"></i>
-              </div>
+              <i class="bi bi-play-circle-fill playlist-btn pe-3"></i>
               <i class="bi bi-heart pe-3"></i>
               <i class="bi bi-arrow-down-circle pe-3"></i>
               <i class="bi bi-three-dots pe-3"></i>
             </div>
-            <div class="d-flex border-bottom graytext border-secondary mb-3 align-items-center">
-              <div class="col col-1 text-center"><span>#</span></div>
-              <div class="col col-3"><span>TITOLO</span></div>
-              <div class="col col-4 text-end"><span>RIPRODUZIONI</span></div>
-              <div class="col col-4 text-end">
+            <div class="d-none d-md-flex border-bottom graytext border-secondary mb-3 align-items-center">
+              <div class="col col-1 d-none d-md-block text-center"><span>#</span></div>
+              <div class="col col-4 col-md-3"><span>TITOLO</span></div>
+              <div class="col d-none d-md-block col-4 text-end"><span>RIPRODUZIONI</span></div>
+              <div class="col col-8 col-md-4 text-end">
                 <i id="clockicon" class="bi bi-clock"></i>
               </div>
             </div>
@@ -203,7 +201,7 @@
           </div>
         </div>
         <!-- COLONNA DI DESTRA -->
-        <div class="col col-2 right-column p-3">
+        <div class="col col-3 right-column p-2 d-none d-md-block">
           <div class="col col-12 d-flex align-items-center justify-content-between mb-3">
             <p class="m-0 text-white">Attività amici</p>
             <div><i class="bi bi-person-plus-fill"></i><i class="bi bi-x"></i></div>
@@ -212,12 +210,12 @@
             <div class="col-2">
               <img src="./assets/imgs/main/image-11.jpg" width="35px" class="rounded-circle" alt="" />
             </div>
-            <div class="col-8 d-flex flex-column">
+            <div class="col-9 d-flex flex-column">
               <p>Charlie Hookham</p>
               <span>In Camera • Yumi Zouma</span>
               <span><i class="bi bi-record-circle"></i> EP III</span>
             </div>
-            <div class="col-2 text-end"><span>4 ore</span></div>
+            <div class="col-1 text-end"><span>4 ore</span></div>
           </div>
           <div class="col col-12 d-flex pb-3">
             <div class="col-2">

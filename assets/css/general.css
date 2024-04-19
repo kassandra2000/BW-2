@@ -85,6 +85,7 @@ footer p {
 .right-column p {
   margin: 0;
   font-weight: bold;
+  font-size: 0.8rem;
 }
 .right-column span {
   font-size: 0.7rem;
@@ -221,8 +222,8 @@ i:hover {
 }
 .bi-play-fill {
   display: inline-block;
-  padding: 1em;
-  background-color: #ddd;
+  padding: 0.5em;
+  background-color: #07be01;
   color: #111;
   border-radius: 50%;
 }

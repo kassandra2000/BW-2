@@ -61,7 +61,7 @@ window.addEventListener("DOMContentLoaded", () => {
   fetch(url, {
     method: "GET",
     headers: {
-      "X-RapidAPI-Key": "986451c613msh2cd80f663430ebbp123103jsnaf6225d65948",
+      "X-RapidAPI-Key": "d1f7931e38mshd3c549afa3c34b1p15f513jsn1a7cfe32785e",
       "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com",
     },
   })
@@ -89,7 +89,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
       const div1 = document.createElement("div");
       div1.classList.add("ps-3");
-      div1.innerHTML = `<span class="fw-bold">PLAYLIST</span>
+      div1.innerHTML = `<span class="fw-bold d-none d-md-block">PLAYLIST</span>
 <h1 class="display-2 fw-bold">${data.title}</h1>
 <p class="m-0">
   <img
@@ -115,19 +115,20 @@ window.addEventListener("DOMContentLoaded", () => {
         }
         const randomNumber = getRandomNumber(100000, 1500000);
         const divInternalTrack = document.createElement("div");
-        divInternalTrack.classList.add("d-flex", "graytext", "pb-2");
-        divInternalTrack.innerHTML = ` <div class="col col-1 align-content-center text-center">
+        divInternalTrack.classList.add("d-flex", "graytext", "pb-3", "pb-md-2");
+        divInternalTrack.innerHTML = ` <div class="col col-1 d-none d-md-block align-content-center text-center">
       <span>${i + 1}</span>
     </div>
-    <div class="col col-3">
+    <div class="col col-4 col-md-3">
       <span class="text-white">${data.tracks.data[i].title_short}</span><br />
       <span>${data.tracks.data[i].artist.name}</span>
     </div>
-    <div class="col col-4 align-content-center text-end">
+    <div class="col d-none d-md-block col-4 align-content-center text-end">
       <span>${randomNumber}</span>
     </div>
-    <div class="col col-4 align-content-center text-end">
-      <span>${newTrackMinute[0]}:${seconds}</span>
+    <div class="col col-8 col-md-4 align-content-center text-end">
+      <span class="d-none d-md-block">${newTrackMinute[0]}:${seconds}</span>
+      <i class="bi bi-three-dots-vertical d-md-none"></i>
     </div>`;
         console.dir(divInternalTrack);
         const artist = divInternalTrack.children[1].children[2];
