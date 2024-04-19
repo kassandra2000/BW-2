@@ -124,14 +124,16 @@ const album = () => {
 </div> `;
         songs.appendChild(div);
 
+        const albumId = data[i].album.id;
+        console.log(albumId);
         const albumTitle = data[i].album.title;
         const divAblum = document.createElement("div");
 
         divAblum.innerHTML = `<div class="albumCards ">
         <div class="selAlbum position-relative p-1 gap-1">
 <img src=${cover} class="albumImg" alt="...">
-<button class="alBtn btn rounded-circle "><i class="bi bi-play-circle-fill"></i>
-</button>
+<a href="/album.html?" class="alBtn btn rounded-circle "><i class="bi bi-play-circle-fill"></i>
+</a >
 </div>
 <div class= "albumTitle">
   <p class="pt-2">${albumTitle}</p>
