@@ -15,7 +15,10 @@ const id = params.get("id");
 console.log(id);
 const URL = "https://deezerdevs-deezer.p.rapidapi.com/artist/" + id;
 console.log(URL);
-const url2 = " https://striveschool-api.herokuapp.com/api/deezer/artist/" + id + "/top?limit=5 ";
+const url2 =
+  " https://striveschool-api.herokuapp.com/api/deezer/artist/" +
+  id +
+  "/top?limit=5 ";
 console.log(url2);
 const songs = document.getElementById("songs");
 const albums = document.getElementById("albums");
@@ -44,7 +47,9 @@ const artist = () => {
       console.log(generateArtist);
 
       document.getElementById("name").innerText = name;
-      document.getElementById("hero").style.backgroundImage = `url(${picture_big})`;
+      document.getElementById(
+        "hero"
+      ).style.backgroundImage = `url(${picture_big})`;
     })
     .catch((err) => console.log(err));
 };
@@ -70,7 +75,12 @@ const album = () => {
       for (let i = 0; i < data.length; i++) {
         const cover = data[i].album.cover;
         const title = data[i].title;
-        const dur = (data[i].duration / 60).toFixed(2);
+        const min = data[i].duration / 60;
+        const minute = min.toString().split(".");
+        const parseMinute = data[i].duration % 60;
+
+        const songId = data[i].id;
+        console.log(songId);
 
         const div = document.createElement("div");
         const randomNumber = getRandomNumber(500000, 5000000);
@@ -78,24 +88,13 @@ const album = () => {
       
       <div class="songLine d-flex justify-content-between align-items-center">
       <div class="d-flex align-items-center py-2 gap-2">
-      <button class="playBtn btn text-white"><svg
-xmlns="http://www.w3.org/2000/svg"
-width="16"
-height="16"
-fill="currentColor"
-class="bi bi-play-fill"
-viewBox="0 0 16 16"
->
-<path
-  d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"
-/>
-</svg>
+      <button onclick="mediaPlayer(${songId})" class="playBtn btn text-white"><i class="bi bi-play-circle-fill"></i>
 </button>
         <img id="cover" src=${cover} alt="" />
         <h6 id="title">${title}</h6>
         </div>
         <div class="d-flex align-items-center gap-4">
-        <button class="playBtn btn text-white"><svg xmlns="http://www.w3.org/2000/svg" 
+        <button class=" playBtn btn text-white"><svg xmlns="http://www.w3.org/2000/svg" 
         width="16" 
         height="16" 
         fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
@@ -103,7 +102,7 @@ viewBox="0 0 16 16"
       </svg>
       </button>
         <p>${randomNumber}</p>
-        <p id="duration">${dur}</p>
+        <p id="duration">${minute[0]}:${parseMinute}</p>
         <button class="playBtn btn">
         <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -131,18 +130,7 @@ viewBox="0 0 16 16"
         divAblum.innerHTML = `<div class="albumCards ">
         <div class="selAlbum position-relative p-1 gap-1">
 <img src=${cover} class="albumImg" alt="...">
-<button class="alBtn btn rounded-circle "><svg
-xmlns="http://www.w3.org/2000/svg"
-width="16"
-height="16"
-fill="currentColor"
-class="bi bi-play-fill"
-viewBox="0 0 16 16"
->
-<path
-  d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"
-/>
-</svg>
+<button class="alBtn btn rounded-circle "><i class="bi bi-play-circle-fill"></i>
 </button>
 </div>
 <div class= "albumTitle">
