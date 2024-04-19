@@ -129,6 +129,7 @@ const album = (url) => {
 };
 
 window.onload = () => {
+  mediaPlayer();
   album("https://deezerdevs-deezer.p.rapidapi.com/playlist/12"); //15 canzoni
   album("https://deezerdevs-deezer.p.rapidapi.com/playlist/1083"); //35 canzoni
   album("https://deezerdevs-deezer.p.rapidapi.com/playlist/1088"); //31 canzoni

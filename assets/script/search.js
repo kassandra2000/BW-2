@@ -4,7 +4,8 @@ const playlistList = document.querySelector(".playlist-list");
 
 if (playlistArray) {
   playlistArray.forEach((playlist) => {
-    const playlistTitle = document.createElement("span");
+    const playlistTitle = document.createElement("a");
+    playlistTitle.setAttribute("href", "./album.html?id=" + playlist.id);
     playlistTitle.textContent = playlist.title;
     playlistList.appendChild(playlistTitle);
   });
@@ -137,6 +138,7 @@ const handleSubmit = (event) => {
 form.addEventListener("submit", handleSubmit);
 
 window.addEventListener("DOMContentLoaded", () => {
+  mediaPlayer();
   fetchGenre(url + "132");
   fetchGenre(url + "116");
   fetchGenre(url + "122");
