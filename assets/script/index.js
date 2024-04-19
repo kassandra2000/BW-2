@@ -52,7 +52,7 @@ const album = (url) => {
   fetch(url, {
     method: "GET",
     headers: {
-      "X-RapidAPI-Key": "ee479080e1msh75d5fd4295dec8ap18b484jsnc600f214b6d8",
+      "X-RapidAPI-Key": "d1f7931e38mshd3c549afa3c34b1p15f513jsn1a7cfe32785e",
       "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com",
     },
   })
@@ -103,7 +103,7 @@ const album = (url) => {
       }
       if (playlistCounter < 6) {
         const div = document.createElement("div");
-        div.classList.add("ps-1", "col-4");
+        div.classList.add("ps-1", "col-12", "col-sm-6", "col-md-4");
 
         div.innerHTML = `
         <div onclick="locationId(${data.id})" class="row flex col-bg g-1 img-container pointer">

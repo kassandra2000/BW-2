@@ -19,7 +19,7 @@ button.dropdown-toggle {
   padding: 0;
   color: white;
   width: 80%;
-  font-size: 0.95vw;
+  font-size: 0.95em;
   justify-content: start;
   display: flex;
   align-items: center;
@@ -42,8 +42,10 @@ button.dropdown-toggle {
   justify-content: space-between;
   align-items: center;
 }
+
+
 .account {
-  font-size: 0.7em;
+  font-size: 1.2vw;
   background-color: rgb(43, 42, 42);
   border-radius: 30px;
   color: rgb(207, 207, 207);
@@ -51,6 +53,11 @@ button.dropdown-toggle {
   padding: 0;
   margin: 0;
 }
+@media only screen and (max-width: 868px) {
+  .account {
+    font-size: 0.8em;}
+}
+
 .account img {
   width: 20%;
   border-radius: 50%;
@@ -70,19 +77,19 @@ button.dropdown-toggle {
   width: 100%;
 }
 .album h6 {
-  font-size: 1.1em;
+  font-size: 1.1vw;
 }
 .album h1 {
-  font-size: 3em;
+  font-size: 3vw;
 }
 .album p {
-  font-size: 1.4em;
+  font-size: 1.4vw;
 }
 button {
   color: rgb(207, 207, 207);
   border: none;
   border-radius: 30px;
-  font-size: 1.4em;
+  font-size: 1.4vw;
   padding: 10px 20px;
   margin: 10px;
   cursor: pointer;
@@ -127,7 +134,7 @@ button {
 h3,
 h4 {
   color: rgb(207, 207, 207);
-  font-size: 3em;
+  font-size: 3vw;
 }
 .list {
   color: rgb(207, 207, 207);
@@ -159,4 +166,31 @@ h4 {
 }
 .playlist-row p {
   font-size: 1.2em;
+}
+
+/* mobile */
+
+@media only screen and (max-width: 768px) {
+  .album h6 {
+    font-size: 1.5vw;
+  }
+  .album h1 {
+    font-size: 3vw;
+  }
+  .album p {
+    font-size: 2.4vw;
+  }
+  button {
+    color: rgb(207, 207, 207);
+    border: none;
+    border-radius: 30px;
+    font-size: 1.9vw;
+    padding: 5px 10px;
+    margin: 2px;
+    cursor: pointer;
+    font-weight: 700;
+  }
+  div.point{
+    display: none;
+  }
 }
