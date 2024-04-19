@@ -79,7 +79,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
       console.log(data);
       const div = document.createElement("div");
-      div.classList.add("shadow-lg");
+      div.classList.add("shadow-lg", "text-center");
       div.innerHTML = `<img
       id="myImg"
       src=${data.picture_big}
