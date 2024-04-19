@@ -141,18 +141,7 @@
           <div class="p-3">
             <div class="d-flex gap-3 mt-3">
               <button class="firstBtn btn rounded-circle">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  class="bi bi-play-fill"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"
-                  />
-                </svg>
+                <i class="bi bi-play-circle-fill"></i>
               </button>
               <button id="followBtn" class="btn btn-secondary rounded-pill">
                 Segui
@@ -360,7 +349,11 @@
           <div class="song-bar">
             <div class="song-infos">
               <div class="image-container">
-                <img id="img" src="" alt="" />
+                <img
+                  id="img"
+                  src="https://th.bing.com/th/id/OIP.yeipMIuX9xpVBynIGQymDQHaHa?rs=1&pid=ImgDetMain"
+                  alt=""
+                />
               </div>
               <div class="song-description">
                 <p id="title"></p>
@@ -376,7 +369,7 @@
             <div class="control-buttons">
               <i class="bi bi-shuffle"></i>
               <i class="bi bi-skip-backward-fill"></i>
-              <i class="bi bi-play-circle-fill"></i>
+              <i id="play" class="bi bi-play-circle-fill"></i>
               <i class="bi bi-skip-forward-fill"></i>
               <i class="bi bi-repeat"></i>
             </div>
