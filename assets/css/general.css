@@ -111,7 +111,7 @@ span i {
   color: #8f8f8d;
 }
 .central-column {
-  max-height: 100vh;
+  max-height: calc(100vh - 112px);
   overflow-y: auto;
   overflow-x: hidden;
 }
@@ -195,10 +195,6 @@ i:hover {
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;
   overflow: hidden;
-}
-.title:hover,
-.artist:hover {
-  text-decoration: underline;
 }
 .artist {
   color: #999;
@@ -356,23 +352,20 @@ a {
 
 .player {
   position: fixed;
-  bottom:50px;
+  bottom: 50px;
   left: 0;
   right: 0;
- 
- 
 }
 
 /* icon-mobile */
-.icon-mobile{
+.icon-mobile {
   position: fixed;
   bottom: 0px;
   left: 0;
   right: 0;
- font-weight: 700;
+  font-weight: 700;
 }
-.icon-mobile svg{
+.icon-mobile svg {
   width: 20px;
   fill: white;
-  
 }

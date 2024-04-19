@@ -79,8 +79,9 @@ window.addEventListener("DOMContentLoaded", () => {
 
       console.log(data);
       const div = document.createElement("div");
-      div.classList.add("shadow-lg", "text-center");
+      div.classList.add("text-center");
       div.innerHTML = `<img
+      class="shadow-lg"
       id="myImg"
       src=${data.picture_big}
       alt="album cover"
@@ -120,8 +121,8 @@ window.addEventListener("DOMContentLoaded", () => {
       <span>${i + 1}</span>
     </div>
     <div class="col col-4 col-md-3">
-      <span class="text-white">${data.tracks.data[i].title_short}</span><br />
-      <span>${data.tracks.data[i].artist.name}</span>
+      <span class="text-white" data-track-id="${data.tracks.data[i].id}">${data.tracks.data[i].title_short}</span><br />
+      <span class="cursor-pointer">${data.tracks.data[i].artist.name}</span>
     </div>
     <div class="col d-none d-md-block col-4 align-content-center text-end">
       <span>${randomNumber}</span>
