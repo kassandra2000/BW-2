@@ -356,9 +356,23 @@ a {
 
 .player {
   position: fixed;
-  bottom: 0;
+  bottom:50px;
   left: 0;
   right: 0;
  
  
+}
+
+/* icon-mobile */
+.icon-mobile{
+  position: fixed;
+  bottom: 0px;
+  left: 0;
+  right: 0;
+ font-weight: 700;
+}
+.icon-mobile svg{
+  width: 20px;
+  fill: white;
+  
 }
