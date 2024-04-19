@@ -1,16 +1,87 @@
 p {
   margin: 0;
 }
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: content-box;
+}
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button.dropdown-toggle {
+  margin: 0;
+  padding: 0;
+  color: white;
+  width: 80%;
+  font-size: 0.95em;
+  justify-content: start;
+  display: flex;
+  align-items: center;
+}
+
+.svg {
+  display: inline-block;
+  width: 27px;
+  background-color: rgb(19, 19, 19);
+  border-radius: 50%;
+  color: rgb(207, 207, 207);
+  fill: currentcolor;
+  padding: 3px 6px 4px;
+}
+
+.col-7 {
+  background-color: rgb(32, 32, 32);
+}
+.col-7 .row {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.account {
+  font-size: 1.2vw;
+  background-color: rgb(43, 42, 42);
+  border-radius: 30px;
+  color: rgb(207, 207, 207);
+  height: 80%;
+  padding: 0;
+  margin: 0;
+}
+@media only screen and (max-width: 868px) {
+  .account {
+    font-size: 0.8em;
+  }
+}
+
+.account img {
+  width: 20%;
+  border-radius: 50%;
+}
+
 .container-fluid {
   background-color: rgb(32, 32, 32);
   color: white;
 }
-
+.upperIcons {
+  width: 100%;
+}
 #hero {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   height: 560px;
+}
+.hero {
+  height: 550px;
 }
 @media screen and (min-width: 1400px) {
   #hero {
