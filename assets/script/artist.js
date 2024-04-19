@@ -12,14 +12,14 @@ if (playlistArray) {
 
 const params = new URLSearchParams(window.location.search);
 const id = params.get("id");
-console.log(id);
+// console.log(id);
 const URL = "https://deezerdevs-deezer.p.rapidapi.com/artist/" + id;
-console.log(URL);
+// console.log(URL);
 const url2 =
   " https://striveschool-api.herokuapp.com/api/deezer/artist/" +
   id +
   "/top?limit=5 ";
-console.log(url2);
+// console.log(url2);
 const songs = document.getElementById("songs");
 const albums = document.getElementById("albums");
 function getRandomNumber(min, max) {
@@ -35,7 +35,7 @@ const artist = () => {
     },
   })
     .then((resp) => {
-      console.log(resp);
+      // console.log(resp);
       if (resp.ok) {
         return resp.json();
       } else {
@@ -44,7 +44,7 @@ const artist = () => {
     })
     .then((generateArtist) => {
       const { name, picture_big } = generateArtist;
-      console.log(generateArtist);
+      // console.log(generateArtist);
 
       document.getElementById("name").innerText = name;
       document.getElementById(
@@ -62,7 +62,7 @@ const album = () => {
     },
   })
     .then((resp) => {
-      console.log(resp);
+      // console.log(resp);
       if (resp.ok) {
         return resp.json();
       } else {
@@ -70,7 +70,7 @@ const album = () => {
       }
     })
     .then((elem) => {
-      console.log(elem);
+      // console.log(elem);
       const data = elem.data;
       for (let i = 0; i < data.length; i++) {
         const cover = data[i].album.cover;
@@ -80,7 +80,7 @@ const album = () => {
         const parseMinute = data[i].duration % 60;
 
         const songId = data[i].id;
-        console.log(songId);
+        // console.log(songId);
 
         const div = document.createElement("div");
         const randomNumber = getRandomNumber(500000, 5000000);
@@ -147,4 +147,5 @@ window.onload = () => {
   artist();
   album();
   mediaPlayer();
+ 
 };
